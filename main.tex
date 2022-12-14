@@ -1,0 +1,262 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+
+%\interfootnotelinepenalty=10000 %force footnote in the same page
+\usepackage{eurosym} % Euro symbol
+
+\usepackage{hyperref} % Hyperlinks
+\usepackage{tikz} %
+
+\usepackage[demo]{graphicx}
+\usepackage{subcaption}
+\usepackage{tabularx}
+
+
+\usepackage{float} % to force image placement
+
+\usepackage{listings} % to write code
+
+\usepackage{amsthm}
+\usepackage{amsmath} % math. function by cases
+
+\usepackage{amsfonts} % math fonts.
+
+\usepackage{multicol}
+\usepackage{multirow}
+
+\usepackage[left=2.5cm, right=3cm]{geometry}
+
+
+\title{Workshop \LaTeX}
+\author{João Dionísio e Manuel Lamas}
+\date{December 2022}
+
+% Define onde ir buscar imagens
+\graphicspath{ {./Images/} }
+
+\newtheorem{theorem}{Theorem}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+
+
+\begin{document}
+
+\maketitle
+    
+\LaTeX\,é um sistema de software para edição de texto. Ao contrário daqueles a que estamos acostumados, existe uma separação entre o ficheiro onde escrevemos (\verb|.tex|) e o resultado final (\verb|.pdf|).
+
+\section{Trying to simulate what it will be like}
+
+
+
+Para aplicar enfâse a palavras usamos \textbf{bold} e \emph{itálico}, ou também \underline{sublinhado}~\footnote{É por isso que \LaTeX\,é mesmo fixe!}. Mas cuidado que usar sublinhado pode pode ter consequências \underline{graves} \underline{ok?}.~\cite{how_to_cite_stuff}
+
+Para dar escape a carateres especiais. Usar backslash \verb|\|.
+"10\% das pessoas"
+
+Reparem que as áspas não foram colocadas corretamente. Para tal ``escrevemos assim''.
+
+Podemos enumerar itens da seguinte maneira
+\begin{enumerate}
+    \item Primeiro
+    \item Segundo
+    \item Terceiro
+\end{enumerate}
+
+\begin{theorem}
+    \LaTeX\,is super cool.
+\end{theorem}
+\begin{proof}
+\LaTeX\, consegue fazer equações bonitas:
+\begin{equation} % numbered equation
+    e^{i\pi} = -1
+\end{equation}
+Mesmo que sejam complicadas:
+\begin{equation} \label{eq:example}
+    \forall \theta \in \Omega, \exists \iota \in \R~\mid \int_{-\infty}^{\infty+1}\sum_{\zeta=\mu}^{\alpha} \theta^{\iota} \, d\theta \geq \frac{\overline{\Xi}}{\overline{\Xi}} 
+\end{equation}
+
+\end{proof}
+
+Pode dar muito jeito também referenciar equações que ficaram para trás. Isso é muito fácil em \LaTeX~\ref{eq:example}.
+
+% É assim que se faz um comentário
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c|c}
+         Pros & Cons \\    
+        \hline
+         Much prettier. $k \in \mathcal{K}$ vs. k € K & ???? \\ 
+         Very easy to cite stuff~\cite{how_to_cite_stuff} & ????  \\
+         cell7 & ????  \\ 
+    \end{tabular}
+    \caption{Prós e Contras de usar \LaTeX}
+    \label{tab:my_label}
+\end{table}
+
+
+
+Para termos tabelas como a da tabela~\ref{tab:table_multi} usamos estas packages:
+\begin{itemize}
+    \item \verb|\usepackage{multicol}|
+    \item \verb|\usepackage{multirow}|
+\end{itemize}
+
+
+\begin{table}[h!]
+    \centering
+
+    \begin{tabular}{ |c|c|c|c| }
+    	\hline
+    	\multirow{2}{*}{Test} & \multicolumn{3}{c|}{Note Code} \\
+        % asdasd
+    	\cline{2-4}
+    	& A & B & C \\
+    	\hline
+    	-1 & 0 & 1 & 2 \\
+    	\hline
+    	0 & 12 & 13 & 14 \\
+    	\hline
+    	1 & 24 & 25 \\
+    	\cline{1-3} % To only create the line between the specified columns
+    \end{tabular}
+    \caption{Testing a table}
+    \label{tab:table_multi} % Must be after the caption
+\end{table}
+
+
+Para mais sobre matrizes ver \href{https://www.overleaf.com/learn/latex/Matrices}{Matrices}.
+Escrever matrizes é essencialmente como tabelas mas num environment como \verb|bmatrix|
+$$
+\left[\begin{matrix}
+1 & 2\\
+3 & 4
+\end{matrix}\right]
+$$
+
+$$
+\begin{bmatrix}
+x_1 & -y_1\\
+ax_1 & y_1+b
+\end{bmatrix}
++
+\begin{bmatrix}
+x_2 & -y_2\\
+ax_2 & y_2+b
+\end{bmatrix}
+$$
+
+$$
+\begin{pmatrix}
+k \\ 1 \\ 1\\
+\end{pmatrix}
+=
+\alpha\times\begin{pmatrix}
+1 \\ 0 \\ 1
+\end{pmatrix}
++
+\beta\times\begin{pmatrix}
+0 \\ 0 \\ k
+\end{pmatrix}
++
+\gamma\times\begin{pmatrix}
+0 \\ 1 \\ 0
+\end{pmatrix}
+$$
+
+Determinantes
+$$\begin{vmatrix}
+1 & 2\\
+3 & 4
+\end{vmatrix} = -2$$
+% Good job spotting it
+
+\section{Podemos fazer mais secções}
+\subsection{E até subsecções!}
+\subsubsection{E mesmo subsubsecções!!!!} 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.2\linewidth]{ron_graham_juggling.jpeg}
+    \caption{Uma imagem vale por um \href{https://www.youtube.com/watch?v=XTeJ64KD5cg}{número de Graham} de palavras}
+    \label{fig:my_label}
+\end{figure}
+
+
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{.3\textwidth}
+  \centering
+  \includegraphics[width=.5\linewidth]{ron_graham_juggling.jpeg}
+  \caption{Uma imagem vale por um \href{https://www.youtube.cuom/watch?v=XTeJ64KD5cg}{número de Graham} de palavras}
+  \label{fig:sub1}
+\end{subfigure}%
+~
+\begin{subfigure}{.3\textwidth}
+  \centering
+  \includegraphics[width=.5\linewidth]{homer_juggling.png}
+  \caption{A subfigure}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{And then you can caption both}
+\label{fig:test}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{.3\textwidth}
+  \centering
+  \includegraphics[width=.5\linewidth]{ron_graham_juggling.jpeg}
+  \caption{Uma imagem vale por um \href{https://www.youtube.com/watch?v=XTeJ64KD5cg}{número de Graham} de palavras}
+  \label{fig:sub1}
+\end{subfigure}%
+
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.8\linewidth]{homer_juggling.png}
+  \caption{A subfigure}
+\label{fig:sub2}
+\end{subfigure}
+\caption[A figure with two subfigures vertically]{Uma descrição mais longa da figura}
+\label{fig:test_vertical}
+\end{figure}
+
+
+Na figura~\ref{fig:test} temos duas subfiguras dispostas na horizontal, e na figura~\ref{fig:test_vertical} temos dispostas na vertical.
+
+
+Também é fácil trabalhar com funções por ramos, vejam o exemplo abaixo da função associada à~\href{https://en.wikipedia.org/wiki/Collatz_conjecture}{Conjetura de Collatz} (e como bónus, vejam também como é fácil colocar URLs). 
+\[   
+f(n) = 
+     \begin{cases}
+       \dfrac{n}{2}, \text{if $n$ is even}\\
+       3n+1, \text{if $n$ is odd}\\
+     \end{cases}
+\]
+
+
+
+\paragraph*{Macros:}
+Podem-se criar comandos para facilitar o uso daqueles que se usam com maior frequência. Por exemplo o comando \verb|\N| pode ser criado para replicar $\mathbb{N}$ (de \verb|\mathbb{N}|).
+
+E então $\N$.
+
+O macro é criado acrescentando a seguinte linha ao preâmbulo:\\
+\verb|\newcommand{\N}{\mathbb{N}}|
+
+% Este exemplo é mais ilustrativo, normalmente criariamos macros não cópias de um comando.
+% Mas de comandos mais compridos e detalhados que deixassem de tornassem aborrecido o seu uso
+
+
+
+
+\bibliographystyle{plainurl}
+\bibliography{bibliography}
+
+\end{document}

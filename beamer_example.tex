@@ -1,0 +1,58 @@
+
+\documentclass{beamer}
+
+
+\usetheme{Madrid}
+
+% Outer theme used to present organization of the presentation
+% \useoutertheme{split}
+% \useoutertheme{miniframes}
+
+% \usecolortheme{seahorse}
+\usefonttheme{serif}
+
+\usepackage{lipsum}
+\usepackage{graphicx,xcolor}
+\usepackage{amsmath,amssymb,amsfonts}
+
+
+\title{\LaTeX Workshop}
+
+\date{December 12, 2022}
+
+
+\begin{document}
+    \frame{\titlepage}
+
+    \section{Intro}
+
+    \begin{frame}{A very important theorem}
+        \begin{block}{Theorem}
+            \centering
+            $1=1$
+        \end{block}
+        
+        \begin{alertblock}{Common mistake}
+            \centering
+            $1=0$
+        \end{alertblock}
+        
+        \begin{examples}
+            \begin{itemize}
+                \item 1=1
+                \item 2=2
+                \item 3=3
+                \item $\dots$
+                \item $\ddots$
+                \item $\vdots$
+            \end{itemize}
+        \end{examples}
+    \end{frame}
+
+    \section{Extra}
+
+    \begin{frame}[fragile]{Testing Verbatim}
+        \verb|Error|
+    \end{frame}
+    
+\end{document}

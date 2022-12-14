@@ -1,0 +1,107 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage{eurosym} % Euro symbol
+
+\usepackage{hyperref} % Hyperlinks
+\usepackage{tikz} % Plots, Graphs, ...
+
+% \usepackage[demo]{graphicx}
+% \usepackage{subcaption}
+
+\usepackage{listings} % to write code
+
+\usepackage{float} % For figure placement option H
+
+
+\usepackage{amsmath} % math. function by cases
+\usepackage{amsfonts} % For for example \mathbb{}
+
+\usepackage[left=2.5cm, right=3cm]{geometry}
+
+% Macros
+\newcommand{\N}{\mathbb{N}}
+
+\title{Workshop \LaTeX Cheat Sheet}
+\author{João Dionísio e Manuel Lamas}
+\date{December 2022}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+Para começar a utilizar LaTeX, \href{https://www.texstudio.org/}{TeXstudio} e \href{https://miktex.org/}{MiKTeX} são as ferramentas que aconselhamos.
+
+O que é \LaTeX?
+\begin{itemize}
+    \item Diferencia-se de Word e Libre Office por não ser WYSIWYG (What you see is what you get), e por isso temos um ficheiro source code que não representa o resultado final. Tendo de visualizar o PDF separadamente.
+    \item Várias funcionalidades podem ser adicionadas via packages que podem indo ser instaladas à medida que a necessidade aparece
+\end{itemize}
+
+
+Topics
+\begin{itemize}
+    \item Math expressions $ 1 + 1 = 2$
+    \item Enfase através de \textbf{bold} e \emph{itálico}. % Há duas opções para itálico https://tex.stackexchange.com/a/26934
+    \item Itemize and enumerate (with second and third levels as well)
+    \item Tabelas
+    \item Figuras
+    \begin{itemize}
+        \item Inserir imagens
+        \item TikZ \verb|\usepackage{tikz}| \href{https://tikz.dev/tikz-plots}{TikZ Plots}
+            \item Criar plots simples E.g. $y=x^{2}$ e $y=x$
+            \item Um grafo simples também
+        \item Posicionamento h,t,b,!,...
+        \item Definir diretório para ir buscar as imagens (em vez da root, pasta "principal")
+        \item Subfigures (ter figuras dispostas na vertical ou horizontal \verb|~|)
+        \item Captions
+        \item Referenciar figuras (\verb|\ref|) através de uma key acrescentada através do comando \verb|\label| (que tem de estar sempre depois da caption)
+    \end{itemize}
+    \item Comentários são escritos entre \% \verb|% Um comentário %| % Like this you see... %
+    \item Escape a carateres especiais. "10\% das pessoas"
+    \item Reparar que as áspas não foram colocadas corretamente. Para tal ``escrevemos assim''
+    \item Links package \verb|hyperref| \href{https://en.wikibooks.org/wiki/LaTeX/Hyperlinks}{mais informação}
+    \item (Mini) Exemplo de Beamer
+\end{itemize}
+
+
+\paragraph*{TikZ example} O pacote \verb|tikz| permite-nos criar gráficos de funções como o da figura~\ref{fig:tikz_example}. Mas serve para criar grafos, e muitos outros tipos de diagramas.
+Ver mais na página \href{https://tikz.dev/}{Ti$K$Z}.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[domain=0:4]
+      \draw[very thin,color=gray] (-0.1,-1.1) grid (3.9,3.9);
+    
+      \draw[->] (-0.2,0) -- (4.2,0) node[right] {$x$};
+      \draw[->] (0,-1.2) -- (0,4.2) node[above] {$f(x)$};
+    
+      \draw[color=red]    plot (\x,\x)             node[right] {$f(x) =x$};
+      % \x r means to convert '\x' from degrees to _r_adians:
+      \draw[color=blue]   plot (\x,{sin(\x r)})    node[right] {$f(x) = \sin x$};
+      \draw[color=orange] plot (\x,{0.05*exp(\x)}) node[right] {$f(x) = \frac{1}{20} \mathrm e^x$};
+    \end{tikzpicture}
+    \caption{Caption}
+    \label{fig:tikz_example}
+\end{figure}
+
+
+\paragraph*{Extras:}
+\href{https://www.overleaf.com/}{OverLeaf} é uma boa ferramente para trabalho colaborativo (particularmente em tempo real).
+
+
+\paragraph*{Macros:}
+Podem-se criar comandos para facilitar o uso daqueles que se usam com maior frequência. Por exemplo o comando \verb|\N| pode ser criado para replicar $\mathbb{N}$ (de \verb|\mathbb{N}|).
+
+E então $\N$.
+
+O macro é criado acrescentando a seguinte linha ao preâmbulo:\\
+\verb|\newcommand{\N}{\mathbb{N}}|
+
+% Este exemplo é mais ilustrativo, normalmente criariamos macros não cópias de um comando.
+% Mas de comandos mais compridos e detalhados que deixassem de tornassem aborrecido o seu uso
+
+\end{document}

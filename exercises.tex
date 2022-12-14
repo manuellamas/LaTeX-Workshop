@@ -1,0 +1,152 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+
+%\interfootnotelinepenalty=10000 %force footnote in the same page
+\usepackage{eurosym} % Euro symbol
+
+\usepackage{hyperref} % Hyperlinks
+\usepackage{tikz} %
+
+\usepackage[demo]{graphicx}
+\usepackage{subcaption}
+\usepackage{tabularx} 
+
+
+\usepackage{float} % to force image placement
+
+\usepackage{listings} % to write code
+
+\usepackage{amsthm}
+\usepackage{amsmath} % math. function by cases
+
+\usepackage{amsfonts} % math fonts.
+
+\usepackage{multicol}
+\usepackage{multirow}
+
+\usepackage[left=2.5cm, right=3cm]{geometry}
+
+
+\title{\LaTeX\,Workshop Exercise Sheet}
+% \author{João Dionísio e Manuel Lamas}
+\date{December 2022}
+
+% Define onde ir buscar imagens
+\graphicspath{ {./Images/} }
+
+\newtheorem{theorem}{Theorem}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+
+
+
+
+\begin{document}
+
+    \maketitle
+
+
+    
+    \noindent\textbf{Exercise 1:} Reproduce the following:
+        A \textbf{number} is a mathematical object used to count, measure, \textit{and} label. The original examples are the natural numbers \underline{1, 2, 3, 4}, and so forth. Other categories of numbers include:
+    \begin{itemize}
+        \item Rational numbers: $\dfrac{1}{2}$
+        \item Transcendental numbers: $\pi$
+        \item Irrational numbers: $\sqrt{2}, \sqrt[3]{2}$ 
+        \item Real numbers: $1$
+        \item Complex numbers: $a+bi$
+    \end{itemize}
+
+
+    \vspace{1em}
+    
+    \noindent\textbf{Exercise 2:} Reproduce the following:
+
+    $$(\forall \varepsilon > 0 ) \, (\exists \delta > 0) \, (\forall x \in \R) \, (0 < |x - p| < \delta \implies |f(x) - L| < \varepsilon)$$
+    
+    \vspace{1em}
+    
+    \noindent\textbf{Exercise 3:} Reproduce the following (the images can be found \href{https://www.amazon.com/Mathematics-Student-Teacher-Pullover-Hoodie/dp/B09784RL5C}{here} and \href{https://i.redd.it/1zfte27tn3q21.jpg}{here}):
+
+    
+    \begin{figure}[H]
+        \centering
+        \begin{subfigure}{.4\textwidth}
+          \centering
+          \includegraphics[width=.7\linewidth]{Images/latex_true.jpeg}
+          \caption{A trivial statement}
+          \label{fig:latex_true}
+        \end{subfigure}%
+        ~
+        \begin{subfigure}{.4\textwidth}
+          \centering
+          \includegraphics[width=\linewidth]{Images/latex_meme.jpg}
+          \caption{A funny meme}
+          \label{fig:latex_meme}
+        \end{subfigure}
+        \caption{Truer words have never been spoken.}
+        \label{fig:both_images}
+    \end{figure}
+
+
+    \noindent\textbf{Exercise 4:} Math expression % Porque é literalmente assim que LaTeX chama à coisa. 
+    \begin{equation}
+        \exists n \geq 3, x,y,z \in \N \mid x^{n} + y^{n} = z^{n}
+    \end{equation}
+    
+    This result follows naturally from the argument in Figure~\ref{fig:latex_true}, and we leave it as an exercise to the reader.\checkmark
+
+
+    \noindent\textbf{Exercise 5:} Matrices and Tables
+    $$
+    \left[\begin{matrix}
+    \text{cos}(\theta) & -\text{sin}(\theta)\\
+    -\text{sin}(\theta) & \text{cos}(\theta)
+    \end{matrix}\right]
+    $$
+
+    $$
+    \begin{pmatrix}
+    k \\ 1 \\ 1\\
+    \end{pmatrix}
+    =
+    \alpha\times\begin{pmatrix}
+    1 \\ 0 \\ 1
+    \end{pmatrix}
+    +
+    \beta\times\begin{pmatrix}
+    0 \\ 0 \\ k
+    \end{pmatrix}
+    $$
+
+
+    \begin{table}[]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|}
+              \hline
+             $\times$ & \textbf{1} & \textbf{i} & \textbf{j} & \textbf{k} \\
+              \hline
+            \textbf{1} & 1 & i & j & k \\
+              \hline
+            \textbf{i} & i & -1 & -k & -j \\
+              \hline
+            \textbf{j} & j & -k & -1 & i \\
+              \hline
+            \textbf{k} & k & j & -i & -1 \\
+              \hline
+        \end{tabular}
+        \caption{Quaterinon multiplication table}
+        \label{tab:my_label}
+    \end{table}
+
+    \vspace{1em}
+
+    \noindent\textbf{Exercise 6:} Prove that if $n^{2}$ is even, then $n$ is even.
+    
+    \vspace{1em}
+    \noindent\textbf{Challenge:} Let $A$ be the set of solvable problems in polynomial time by a deterministic Turing machine and $B$ the set of solvable problems in polynomial time by a non-deterministic Turing machine. Is $A=B$?\\
+    \textbf{Reward:} \euro$100$
+\end{document}
