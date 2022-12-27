@@ -2,7 +2,6 @@
 *.code-workspace
 
 
-*.pdf
 
 # LaTeX Auxiliary files
 *.aux
@@ -17,3 +16,8 @@
 
 # From Beamer
 *.vrb
+
+
+
+*.ps1
+*.zip
