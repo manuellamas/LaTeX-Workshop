@@ -4,9 +4,20 @@
 
 
 % To define non-default page margins
-\usepackage[left=2.5cm, right=3cm]{geometry}
+\usepackage[left = 2.5cm, right = 3cm, bottom = 3cm]{geometry}
+
+\setlength{\parskip}{3mm} % Defines spacing between paragraphs
+
+\usepackage{xcolor} % For handling colors
+\definecolor{bluelink}{RGB}{0, 130, 153} % RGB for values between 0 and 255
 
 \usepackage{hyperref} % Hyperlinks
+\hypersetup{
+    colorlinks = true,
+    linkcolor = bluelink, % For section (in document) links
+    urlcolor = bluelink % For URL colors
+    % linkbordercolor = {black},
+}
 
 
 \usepackage{tikz} % Plots, Graphs, ...
