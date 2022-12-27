@@ -53,14 +53,15 @@ What is \LaTeX?
     \item Several functionalities can be added via packages, which can be installed (and then included in each specific file) as the need arises.
 \end{itemize}
 
-This document is organized as follows: Section $2$ is dedicated to math expressions, Section $3$ to text formatting, Sections $4$ and $5$ to images and tables respectively, and Section $6$ to plotting and graph drawing with Ti$k$Z. The document ends with some miscellaneous commands and useful links.
-
-This document is organized as follows: \hyperref[sec:math]{Section 2} is dedicated to math expressions, \hyperref[sec:text_format]{Section 3} to text formatting, \hyperref[sec:images]{Sections 4} and \hyperref[sec:tables]{5} to images and tables respectively, and \hyperref[sec:tikz]{Section 6} to plotting and graph drawing with Ti$k$Z. The document ends with \hyperref[sec:misc]{Section 7} with some miscellaneous commands and useful links.
+This document is organized as follows: \hyperref[sec:math]{Section 2} is dedicated to math expressions, \hyperref[sec:text_format]{Section 3} to text formatting, \hyperref[sec:images]{Sections 4} and \hyperref[sec:tables]{5} to images and tables respectively, and \hyperref[sec:tikz]{Section 6} to plotting and graph drawing with Ti$k$Z.
+The document ends with \hyperref[sec:misc]{Section 7} with some miscellaneous commands and useful links.
 
 \section{Math Expressions}
 \label{sec:math}
 
-\LaTeX is very often used as a typesetting language for mathematics, due to its ease of use. To write simple expressions, we just need to write them in between dollar signs, like so: $1+1=2$. If we do not wish to write the math expression inline, we can also use double dollar signs:
+\LaTeX\,is very often used as a typesetting language for mathematics, due to its ease of use.
+To write simple expressions, we just need to write them in between dollar signs, like so: $1+1=2$.
+If we do not wish to write the math expression inline, we can also use double dollar signs:
 
 $$x = y + 3$$
 
@@ -107,13 +108,13 @@ And with the enumerate command, the items are numbered:
 \section{Insert Images}
 \label{sec:images}
 
-With the graphicx package, inserting images is straightforward.
+With the \verb|graphicx| package, inserting images is straightforward.
 
 \includegraphics[width = .3\textwidth]{Images/Cardioid.png}
 
-Using the~\verb|\includegraphics[]{}| command, we can control the images' size with the square brackets, and the image itself goes in the curly brackets. If we create a folder to store the images (which is a good practice to have an organized workspace), then the directory has to be included. In our example, we have a file ``Cardiod.png'' in the Images folder. So we need to use \verb|Images/Cardioid.png|. To center the image, we have the \verb|\centering| command.
+Using the~\verb|\includegraphics[]{}| command, we can control the images' size with the square brackets, and the image itself goes in the curly brackets. If we create a folder to store the images (which is a good practice to have an organized workspace), then the directory has to be included. In our example, we have a file ``Cardioid.png'' in the Images folder. So we need to use \verb|Images/Cardioid.png|. To center the image, we have the \verb|\centering| command.
 
-As with math expressions and the equation environment, images also have an environment that allows us to have more control over them. For example, we can specify the position of the figure. The standard options are h, t, b, and p, which stand respectively for here, top, bottom, and page of floats. They mean that the figure should be placed exactly where it is written in the text, at the top of the next page, at the bottom of the next page, and in a page of floats, separate from the text. These options can sometimes be ignored by \LaTeX, but if one really wants them to be enforced, using ``!h'' instead of just ``h'' may be able to override this.
+As with math expressions and the equation environment, images also have an environment that allows us to have more control over them, called figure. For example, we can specify the position of the figure. The standard options are h, t, b, and p, which stand respectively for here, top, bottom, and page of floats. They mean that the figure should be placed exactly where it is written in the text, at the top of the next page, at the bottom of the next page, and in a page of floats, separate from the text. These options can sometimes be ignored by \LaTeX, but if one really wants them to be enforced, using ``!h'' instead of just ``h'' may be able to override this.
 For more on this topic see \href{https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions#Figures}{placement specifier parameter}.
 
 \begin{figure}[ht]
@@ -204,7 +205,7 @@ More advanced tables can be created using the commands \verb|\multirow| and \ver
 
 
 
-\section{Tikz}
+\section{TikZ}
 \label{sec:tikz}
 
 \paragraph*{TikZ example} The \verb|tikz| package allows us to plot functions like the one in figure~\ref{fig:tikz_example}. But it can also be used to create graphs, as the one in figure~\ref{fig:graph}, and many other kinds of diagrams. See more on the webpage \href{https://tikz.dev/}{Ti$k$Z}.
@@ -222,7 +223,7 @@ More advanced tables can be created using the commands \verb|\multirow| and \ver
       \draw[color=blue]   plot (\x,{sin(\x r)})    node[right] {$f(x) = \sin x$};
       \draw[color=orange] plot (\x,{0.05*exp(\x)}) node[right] {$f(x) = \frac{1}{20} \mathrm e^x$};
     \end{tikzpicture}
-    \caption{Plotting functions with the Ti$k$Z package.}
+    \caption{Plotting functions with Ti$k$Z}
     \label{fig:tikz_example}
 \end{figure}
 
@@ -258,7 +259,7 @@ An example of a hyperlink for more information on the subject of \href{https://e
 
 
 \paragraph*{Macros:}
-One can create commands to achieve a large number of effects. One of the most commonly used is to facilitate the usage of other commands that are frequently used. For example, to replace the command \verb|\mathbb{N}|, we can create a command \verb|\N| adding the following in the preamble \verb|\newcommand{\N}{\mathbb{N}}|. And then we can simply use $\N$.
+One can create commands to achieve numerous effects. One of the most commonly used is to facilitate the usage of other commands that are frequently used. For example, to replace the command \verb|\mathbb{N}|, we can create a command \verb|\N| adding the following in the preamble \verb|\newcommand{\N}{\mathbb{N}}|. And then we can simply use $\N$.
 
 This example serves as a simple illustration, we would not usually create macros that are essentially copies of other commands.
 But instead, we would use it for longer and more detailed commands that we use often.
