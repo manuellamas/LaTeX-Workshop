@@ -1,5 +1,6 @@
 # VSCode workspace
 *.code-workspace
+.vscode
 
 
 
